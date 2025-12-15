@@ -1,0 +1,36 @@
+{
+  "name": "christmascountdown",
+  "version": "1.0.0",
+  "description": "Christmas Countdown Desktop App",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./output.css --minify",
+    "start": "npm run build:css && electron .",
+    "dev": "tailwindcss -i ./input.css -o ./output.css --watch",
+    "build": "npm run build:css && electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "com.yourname.christmascountdown",
+    "productName": "Christmas Countdown",
+    "win": {
+      "target": "nsis"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*"
+    ]
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "@types/electron": "^1.6.12",
+    "autoprefixer": "^10.4.23",
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12",
+    "install": "^0.13.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18"
+  }
+}
